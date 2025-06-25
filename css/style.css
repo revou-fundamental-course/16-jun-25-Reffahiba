@@ -1,0 +1,156 @@
+body{
+  font-family: "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f9ff;
+  color: #333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e3f2fd;
+  text-align: center;
+}
+
+.header h1{
+  margin-bottom: 10px;
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.navbar ul li{
+  margin-right: 30px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.navbar ul li:hover{
+  color: blue;
+  font-weight: bold;
+}
+
+.navbar ul li button{
+  background-color: purple;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 10px;
+}
+
+img{
+  width: 210px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.pilihanSegitiga{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.pilihanSegitiga button{
+  background-color: lightGreen;
+  margin: 6px;
+  border-radius: 20px;
+  padding: 5px;
+  border: none;
+  color: white
+  cursor: pointer;
+  transition: background-color 0.5s;
+  margin-bottom: 20px;
+}
+
+.pilihanSegitiga button:hover{
+  background-color: green;
+}
+
+.form-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  max-width: 320px;
+  width: 100%;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-section input {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.form-section button{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+}
+
+.form-section button:hover{
+  background-color: #1976d2
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.footer{
+  background-color: lightBlue;
+}
+
+.footer p{
+  text-align: center;
+  background-color: #bbdefb;
+  color: #000;
+  font-size: 14px;
+  padding: 8px;
+}

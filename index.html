@@ -3,10 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator Matematik</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="main-wrapper">
+        <header class="header">
+            <h1>Welcome to Katik</h1>
+            <p>Hai sobat selamat datang di Katik :)</p>
+            <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangung datar</p>
     
+            <nav class="navbar">
+                <ul>
+                    <li><button onclick="tampilkanBangunDatar('segitiga')">SEGITIGA</></button></li>
+                    <li><button onclick="tampilkanBangunDatar('persegi')">PERSEGI</></button></li>
+                    <li><button onclick="tampilkanBangunDatar('persegi-panjang')">PERSEGI PANJANG</></button></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main class="main">
+    
+            <!-- Segitiga -->
+            <div id="form-segitiga" class="form-section" style="display: none;">
+                <img src="assets/segitiga-sama-sisi.png" alt="gambar segitiga-sama-sisi">
+                <h3>Pilih Hitung Luas atau Keliling Segitiga</h3>
+                <div class="pilihanSegitiga">
+                    <button onclick="tampilkanForm('luas')">Luas Segitiga</></button>
+                    <button onclick="tampilkanForm('keliling')">Keliling Segitiga</a></button>
+                </div>
+    
+                <div id="form-luas" style="display: none;">
+                    <label for="alas">Alas <input type="number" id="alas" required></label><br>
+                    <label for="tinggi">Tinggi <input type="number" id="tinggi" required></label><br>
+                    <button onclick="hitungLuasSegitiga()">Hitung Luas</button>
+                    <p id="hasilLuas"></p>
+                </div>
+    
+                <div id="form-keliling" style="display: none;">
+                    <label for="sisiA">Sisi A <input type="number" id="sisiA" required></label><br>
+                    <label for="sisiB">Sisi B <input type="number" id="sisiB" required></label><br>
+                    <label for="sisiC">Sisi B <input type="number" id="sisiC" required></label><br>
+                    <button onclick="hitungKelilingSegitiga()">Hitung Keliling</button>
+                    <p id="hasilKeliling"></p>
+                </div>
+            </div>
+    
+            <!-- Persegi -->
+            <div id="form-persegi" class="form-section" style="display: none;>
+                <img src="assets/segitiga-sama-sisi.png" alt="gambar segitiga-sama-sisi">
+                <h3>Pilih Hitung Luas atau Keliling Persegi</h3>
+                <div class="pilihanPersegi">
+                    <button onclick="tampilkanForm('luas')">Luas Persegi</></button>
+                    <button onclick="tampilkanForm('keliling')">Keliling Persegi</a></button>
+                </div>
+    
+                <div id="form-luas" style="display: none;">
+                    <label for="sisi">Sisi <input type="number" id="sisi"></label><br>
+                    <button onclick="hitungLuasPersegi()">Hitung Luas</button>
+                    <p id="hasilLuas"></p>
+                </div>
+    
+                <div id="form-keliling" style="display: none;">
+                    <label for="sisi">Sisi <input type="number" id="sisi"></label><br>
+                    <button onclick="hitungKelilingPersegi()">Hitung Keliling</button>
+                    <p id="hasilKeliling"></p>
+                </div>
+            </div>
+    
+            <!-- Persegi Panjang -->
+            <div id="form-persegiPanjang" class="form-section" style="display: none;>
+                <img src="assets/segitiga-sama-sisi.png" alt="gambar segitiga-sama-sisi">
+                <h3>Pilih Hitung Luas atau Keliling Persegi Panjang</h3>
+                <div class="pilihanPersegiPanjang">
+                    <button onclick="tampilkanForm('luas')">Luas Persegi Panjang</></button>
+                    <button onclick="tampilkanForm('keliling')">Keliling Persegi Panjang</a></button>
+                </div>
+    
+                <div id="form-luas" style="display: none;">
+                    <label for="panjang">Panjang <input type="number" id="panjang"></label><br>
+                    <label for="lebar">Lebar <input type="number" id="lebar"></label><br>
+                    <button onclick="hitungLuasPersegiPanjang()">Hitung Luas</button>
+                    <p id="hasilLuas"></p>
+                </div>
+    
+                <div id="form-keliling" style="display: none;">
+                    <label for="panjang">Panjang <input type="number" id="panjang"></label><br>
+                    <label for="lebar">Lebar <input type="number" id="lebar"></label><br>
+                    <button onclick="hitungKelilingPersegiPanjang()">Hitung Keliling</button>
+                    <p id="hasilKeliling"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy;<span id="year"></span> Kalkulatik Geometri. Reffa Hibatullah</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
