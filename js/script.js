@@ -16,17 +16,16 @@ function tampilkanBangunDatar(jenis){
     }
 }
 
-function tampilkanForm(jenis){
-    document.getElementById("form-luas").style.display = "none";
-    document.getElementById("form-keliling").style.display = "none";
+function tampilkanForm(jenis, bangun) {
+    // Sembunyikan semua form terlebih dahulu
+    const semuaForm = document.querySelectorAll(".form-section div[id^='form-']");
+    semuaForm.forEach((form) => (form.style.display = "none"));
 
-    resetForm();
-
-    if(jenis === "luas"){
-        document.getElementById("form-luas").style.display = "block";
-    } else if(jenis === "keliling"){
-        document.getElementById("form-keliling").style.display = "block";
-    }
+    // Tampilkan yang dimaksud
+    const formTarget = document.getElementById(`form-${jenis}-${bangun}`);
+    if (formTarget) {
+        formTarget.style.display = "block";
+  }
 }
 
 // Hitung segitiga
@@ -34,10 +33,15 @@ function hitungLuasSegitiga() {
     const alas = parseFloat(document.getElementById("alas").value);
     const tinggi = parseFloat(document.getElementById("tinggi").value);
 
+    if (isNaN(alas) || isNaN(tinggi)) {
+        alert("Terdapat field yang kosong, isi terlebih dahulu");
+        return;
+    }
+
     const luas = 0.5 * alas * tinggi;
 
     document.getElementById(
-        "hasilLuas"
+        "hasilLuasSegitiga"
     ).textContent = `Luas: ${luas}`;
 }
 
@@ -46,54 +50,91 @@ function hitungKelilingSegitiga() {
     const b = parseFloat(document.getElementById("sisiB").value);
     const c = parseFloat(document.getElementById("sisiC").value);
 
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Terdapat field yang kosong, isi terlebih dahulu");
+        return;
+    }
+
     const keliling = a + b + c;
 
     document.getElementById(
-        "hasilKeliling"
+        "hasilKelilingSegitiga"
     ).textContent = `Keliling: ${keliling}`;
 }
 
 // Hitung persegi
 function hitungLuasPersegi() {
-    const sisi = parseFloat(document.getElementById("sisi").value);
+    const sisi = parseFloat(document.getElementById("sisiLuas").value);
+    
+    if(isNaN(sisi)){
+        alert("Terdapat field yang kosong, isi terlebih dahulu");
+        return;
+    }
+
     const luas = sisi * sisi;
-    const keliling = 4 * sisi;
+    
 
     document.getElementById(
-        "hasilLuas"
-    ).textContent = `Luas: ${luas}, Keliling: ${keliling}`;
+        "hasilLuasPersegi"
+    ).textContent = `Luas: ${luas}`;
 }
 
-function hitungLuasPersegi() {
-    const sisi = parseFloat(document.getElementById("sisi").value);
+function hitungKelilingPersegi() {
+    const sisi = parseFloat(document.getElementById("sisiKeliling").value);
+    
+    if (isNaN(sisi)) {
+        alert("Isi nilai sisi terlebih dahulu");
+        return;
+    }
+    
     const keliling = 4 * sisi;
 
     document.getElementById(
-        "hasilKeliling"
+        "hasilKelilingPersegi"
     ).textContent = `Keliling: ${keliling}`;
 }
 
 // Hitung persegi panjang
-function hitungPersegiPanjang() {
-    const panjang = parseFloat(document.getElementById("panjang").value);
-    const lebar = parseFloat(document.getElementById("lebar").value);
+function hitungLuasPersegiPanjang() {
+    const panjang = parseFloat(document.getElementById("panjangLuas").value);
+    const lebar = parseFloat(document.getElementById("lebarLuas").value);
+
+    if (isNaN(panjang) || isNaN(lebar)){
+        alert("Terdapat field yang kosong, isi terlebih dahulu");
+        return;
+    }
+
     const luas = panjang * lebar;
+
+    document.getElementById(
+        "hasilLuasPersegiPanjang"
+    ).textContent = `Luas: ${luas}`;
+}
+
+function hitungKelilingPersegiPanjang() {
+    const panjang = parseFloat(document.getElementById("panjangKeliling").value);
+    const lebar = parseFloat(document.getElementById("lebarKeliling").value);
+    
+    if (isNaN(panjang) || isNaN(lebar)){
+        alert("Terdapat field yang kosong, isi terlebih dahulu");
+        return;
+    }
+
     const keliling = 2 * (panjang + lebar);
 
     document.getElementById(
-        "hasilPersegiPanjang"
-    ).textContent = `Luas: ${luas}, Keliling: ${keliling}`;
+        "hasilKelilingPersegiPanjang"
+    ).textContent = `Keliling: ${keliling}`;
 }
 
-function resetForm() {
-  // Kosongkan input Luas
-    document.getElementById("alas").value = "";
-    document.getElementById("tinggi").value = "";
-    document.getElementById("hasilLuas").textContent = "";
+function resetForm() {a
+    // Reset semua input bertipe number
+    const inputs = document.querySelectorAll("input[type='number']");
+    inputs.forEach((input) => (input.value = ""));
 
-    // Kosongkan input Keliling
-    document.getElementById("sisiA").value = "";
-    document.getElementById("sisiB").value = "";
-    document.getElementById("sisiC").value = "";
-    document.getElementById("hasilKeliling").textContent = "";
+    // Reset semua elemen hasil
+    const outputs = document.querySelectorAll(
+        "#hasilLuasSegitiga, #hasilKelilingSegitiga, #hasilLuasPersegi, #hasilKelilingPersegi, #hasilLuasPersegiPanjang, #hasilKelilingPersegiPanjang"
+    );
+    outputs.forEach((output) => (output.textContent = ""));
 }

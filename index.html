@@ -15,9 +15,9 @@
     
             <nav class="navbar">
                 <ul>
-                    <li><button onclick="tampilkanBangunDatar('segitiga')">SEGITIGA</></button></li>
-                    <li><button onclick="tampilkanBangunDatar('persegi')">PERSEGI</></button></li>
-                    <li><button onclick="tampilkanBangunDatar('persegi-panjang')">PERSEGI PANJANG</></button></li>
+                    <li><button onclick="tampilkanBangunDatar('segitiga')">SEGITIGA</button></li>
+                    <li><button onclick="tampilkanBangunDatar('persegi')">PERSEGI</button></li>
+                    <li><button onclick="tampilkanBangunDatar('persegi-panjang')">PERSEGI PANJANG</button></li>
                 </ul>
             </nav>
         </header>
@@ -29,69 +29,69 @@
                 <img src="assets/segitiga-sama-sisi.png" alt="gambar segitiga-sama-sisi">
                 <h3>Pilih Hitung Luas atau Keliling Segitiga</h3>
                 <div class="pilihanSegitiga">
-                    <button onclick="tampilkanForm('luas')">Luas Segitiga</></button>
-                    <button onclick="tampilkanForm('keliling')">Keliling Segitiga</a></button>
+                    <button onclick="tampilkanForm('luas', 'segitiga')">Luas Segitiga</button>
+                    <button onclick="tampilkanForm('keliling', 'segitiga')">Keliling Segitiga</button>
                 </div>
     
-                <div id="form-luas" style="display: none;">
+                <div id="form-luas-segitiga" style="display: none;">
                     <label for="alas">Alas <input type="number" id="alas" required></label><br>
                     <label for="tinggi">Tinggi <input type="number" id="tinggi" required></label><br>
                     <button onclick="hitungLuasSegitiga()">Hitung Luas</button>
-                    <p id="hasilLuas"></p>
+                    <p id="hasilLuasSegitiga"></p>
                 </div>
     
-                <div id="form-keliling" style="display: none;">
+                <div id="form-keliling-segitiga" style="display: none;">
                     <label for="sisiA">Sisi A <input type="number" id="sisiA" required></label><br>
                     <label for="sisiB">Sisi B <input type="number" id="sisiB" required></label><br>
                     <label for="sisiC">Sisi B <input type="number" id="sisiC" required></label><br>
                     <button onclick="hitungKelilingSegitiga()">Hitung Keliling</button>
-                    <p id="hasilKeliling"></p>
+                    <p id="hasilKelilingSegitiga"></p>
                 </div>
             </div>
     
             <!-- Persegi -->
-            <div id="form-persegi" class="form-section" style="display: none;>
-                <img src="assets/segitiga-sama-sisi.png" alt="gambar segitiga-sama-sisi">
+            <div id="form-persegi" class="form-section" style="display: none;">
+                <img src="assets/Persegi.png" alt="gambar segitiga-sama-sisi">
                 <h3>Pilih Hitung Luas atau Keliling Persegi</h3>
                 <div class="pilihanPersegi">
-                    <button onclick="tampilkanForm('luas')">Luas Persegi</></button>
-                    <button onclick="tampilkanForm('keliling')">Keliling Persegi</a></button>
+                    <button onclick="tampilkanForm('luas', 'persegi')">Luas Persegi</button>
+                    <button onclick="tampilkanForm('keliling', 'persegi')">Keliling Persegi</button>
                 </div>
     
-                <div id="form-luas" style="display: none;">
-                    <label for="sisi">Sisi <input type="number" id="sisi"></label><br>
+                <div id="form-luas-persegi" style="display: none;">
+                    <label for="sisi">Sisi <input type="number" id="sisiLuas"></label><br>
                     <button onclick="hitungLuasPersegi()">Hitung Luas</button>
-                    <p id="hasilLuas"></p>
+                    <p id="hasilLuasPersegi"></p>
                 </div>
     
-                <div id="form-keliling" style="display: none;">
-                    <label for="sisi">Sisi <input type="number" id="sisi"></label><br>
+                <div id="form-keliling-persegi" style="display: none;">
+                    <label for="sisi">Sisi <input type="number" id="sisiKeliling"></label><br>
                     <button onclick="hitungKelilingPersegi()">Hitung Keliling</button>
-                    <p id="hasilKeliling"></p>
+                    <p id="hasilKelilingPersegi"></p>
                 </div>
             </div>
     
             <!-- Persegi Panjang -->
-            <div id="form-persegiPanjang" class="form-section" style="display: none;>
-                <img src="assets/segitiga-sama-sisi.png" alt="gambar segitiga-sama-sisi">
+            <div id="form-persegiPanjang" class="form-section" style="display: none;">
+                <img src="assets/Persegi_Panjang.png" alt="gambar segitiga-sama-sisi" class="pj">
                 <h3>Pilih Hitung Luas atau Keliling Persegi Panjang</h3>
                 <div class="pilihanPersegiPanjang">
-                    <button onclick="tampilkanForm('luas')">Luas Persegi Panjang</></button>
-                    <button onclick="tampilkanForm('keliling')">Keliling Persegi Panjang</a></button>
+                    <button onclick="tampilkanForm('luas', 'persegiPanjang')">Luas Persegi Panjang</button>
+                    <button onclick="tampilkanForm('keliling', 'persegiPanjang')">Keliling Persegi Panjang</button>
                 </div>
     
-                <div id="form-luas" style="display: none;">
-                    <label for="panjang">Panjang <input type="number" id="panjang"></label><br>
-                    <label for="lebar">Lebar <input type="number" id="lebar"></label><br>
+                <div id="form-luas-persegiPanjang" style="display: none;">
+                    <label for="panjang">Panjang <input type="number" id="panjangLuas"></label><br>
+                    <label for="lebar">Lebar <input type="number" id="lebarLuas"></label><br>
                     <button onclick="hitungLuasPersegiPanjang()">Hitung Luas</button>
-                    <p id="hasilLuas"></p>
+                    <p id="hasilLuasPersegiPanjang"></p>
                 </div>
     
-                <div id="form-keliling" style="display: none;">
-                    <label for="panjang">Panjang <input type="number" id="panjang"></label><br>
-                    <label for="lebar">Lebar <input type="number" id="lebar"></label><br>
+                <div id="form-keliling-persegiPanjang" style="display: none;">
+                    <label for="panjang">Panjang <input type="number" id="panjangKeliling"></label><br>
+                    <label for="lebar">Lebar <input type="number" id="lebarKeliling"></label><br>
                     <button onclick="hitungKelilingPersegiPanjang()">Hitung Keliling</button>
-                    <p id="hasilKeliling"></p>
+                    <p id="hasilKelilingPersegiPanjang"></p>
                 </div>
             </div>
         </main>
