@@ -25,7 +25,7 @@ function tampilkanForm(jenis, bangun) {
     const formTarget = document.getElementById(`form-${jenis}-${bangun}`);
     if (formTarget) {
         formTarget.style.display = "block";
-  }
+    }
 }
 
 // Hitung segitiga
@@ -40,9 +40,12 @@ function hitungLuasSegitiga() {
 
     const luas = 0.5 * alas * tinggi;
 
+    const hasilElemen = document.getElementById("hasilLuasSegitiga");
+
     document.getElementById(
         "hasilLuasSegitiga"
     ).textContent = `Luas: ${luas}`;
+    hasilElemen.style.display = "block";
 }
 
 function hitungKelilingSegitiga() {
@@ -57,9 +60,12 @@ function hitungKelilingSegitiga() {
 
     const keliling = a + b + c;
 
+    const hasilElemen = document.getElementById("hasilKelilingSegitiga");
+
     document.getElementById(
         "hasilKelilingSegitiga"
     ).textContent = `Keliling: ${keliling}`;
+    hasilElemen.style.display = "block";
 }
 
 // Hitung persegi
@@ -72,11 +78,13 @@ function hitungLuasPersegi() {
     }
 
     const luas = sisi * sisi;
-    
+
+    const hasilElemen = document.getElementById("hasilLuasPersegi");
 
     document.getElementById(
         "hasilLuasPersegi"
     ).textContent = `Luas: ${luas}`;
+    hasilElemen.style.display = "block";
 }
 
 function hitungKelilingPersegi() {
@@ -89,9 +97,12 @@ function hitungKelilingPersegi() {
     
     const keliling = 4 * sisi;
 
+    const hasilElemen = document.getElementById("hasilKelilingPersegi");
+
     document.getElementById(
         "hasilKelilingPersegi"
     ).textContent = `Keliling: ${keliling}`;
+    hasilElemen.style.display = "block";
 }
 
 // Hitung persegi panjang
@@ -106,9 +117,12 @@ function hitungLuasPersegiPanjang() {
 
     const luas = panjang * lebar;
 
+    const hasilElemen = document.getElementById("hasilLuasPersegiPanjang");
+
     document.getElementById(
         "hasilLuasPersegiPanjang"
     ).textContent = `Luas: ${luas}`;
+    hasilElemen.style.display = "block";
 }
 
 function hitungKelilingPersegiPanjang() {
@@ -122,12 +136,15 @@ function hitungKelilingPersegiPanjang() {
 
     const keliling = 2 * (panjang + lebar);
 
+    const hasilElemen = document.getElementById("hasilKelilingPersegiPanjang");
+
     document.getElementById(
         "hasilKelilingPersegiPanjang"
     ).textContent = `Keliling: ${keliling}`;
+    hasilElemen.style.display = "block";
 }
 
-function resetForm() {a
+function resetForm() {
     // Reset semua input bertipe number
     const inputs = document.querySelectorAll("input[type='number']");
     inputs.forEach((input) => (input.value = ""));
